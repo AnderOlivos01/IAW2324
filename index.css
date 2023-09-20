@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(241, 231, 203);
+}
+
+h1{
+    font-family: 'Anton', sans-serif;
+    color: rgb(119, 56, 14);
+    margin: 20px;
+}
+
+article{
+    font-family:'Times New Roman', Times, serif;
+    font-size: x-large;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+#imagen_personal{
+    width: 380px;
+    height: auto;
+}
+
+#datos{
+    margin-left: 10px;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    color: brown;
+}
