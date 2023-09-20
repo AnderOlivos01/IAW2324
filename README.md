@@ -5,3 +5,11 @@ En este tema avamos a instalar las principales aplicaciones con las que vamos a 
 1. Visual Studio Code
 2. Git
 3. Docker
+
+__LENGUAJES A UTILIZAR__
+-HTML
+-CSS
+-JAVASCRIPT
+-PHP
+
+[GIT PAGES](https://anderolivos01.github.io/IAW2324.github.io/)
