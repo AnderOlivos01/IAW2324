@@ -1,0 +1,53 @@
+function sumar () {
+    var x = parseFloat(document.getElementById('valorA').value);
+    var y = parseFloat(document.getElementById('valorB').value);
+    if(isNaN(x)||isNaN(y)){
+        document.getElementById('resultado').innerHTML="Introduzca valores númericos por favor";
+    }
+    else{
+
+        var result = x+y;
+        document.getElementById('resultado').innerHTML="La suma es " + result;
+    }
+}
+
+function restar () {
+    var x = parseFloat(document.getElementById('valorA').value);
+    var y = parseFloat(document.getElementById('valorB').value);
+    if(isNaN(x)||isNaN(y)){
+        document.getElementById('resultado').innerHTML="Introduzca valores númericos por favor";
+    }
+    else{
+    var result = x-y;
+    document.getElementById('resultado').innerHTML="La resta es " + result;
+    }
+}
+
+function multiplicar () {
+    var x = parseFloat(document.getElementById('valorA').value);
+    var y = parseFloat(document.getElementById('valorB').value);
+    if(isNaN(x)||isNaN(y)){
+        document.getElementById('resultado').innerHTML="Introduzca valores númericos por favor";
+    }
+    else{
+    var result = x*y;
+    document.getElementById('resultado').innerHTML="La multiplicación es " + result;
+    }
+}
+
+function dividir () {
+    var x = parseFloat(document.getElementById('valorA').value);
+    var y = parseFloat(document.getElementById('valorB').value);
+    if(isNaN(x)||isNaN(y)){
+        document.getElementById('resultado').innerHTML="Introduzca valores númericos por favor";
+    }
+    else{
+        if(y==0){
+            document.getElementById('resultado').innerHTML="No se puede dividir entre 0";
+        }
+        else{
+        var result = x/y;
+        document.getElementById('resultado').innerHTML="La división " + result;
+        }
+    }
+}
