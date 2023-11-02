@@ -5,9 +5,8 @@ function sumar () {
         document.getElementById('resultado').innerHTML="Introduzca valores númericos por favor";
     }
     else{
-
         var result = x+y;
-        document.getElementById('resultado').innerHTML="La suma es " + result;
+        document.getElementById('resultado').innerHTML="La suma es <span>" + result + "</span>";
     }
 }
 
@@ -19,7 +18,7 @@ function restar () {
     }
     else{
     var result = x-y;
-    document.getElementById('resultado').innerHTML="La resta es " + result;
+    document.getElementById('resultado').innerHTML="La resta es <span>" + result + "</span>";
     }
 }
 
@@ -31,7 +30,7 @@ function multiplicar () {
     }
     else{
     var result = x*y;
-    document.getElementById('resultado').innerHTML="La multiplicación es " + result;
+    document.getElementById('resultado').innerHTML="La multiplicación es <span>" + result + "</span>";
     }
 }
 
@@ -47,7 +46,7 @@ function dividir () {
         }
         else{
         var result = x/y;
-        document.getElementById('resultado').innerHTML="La división " + result;
+        document.getElementById('resultado').innerHTML="La división <span>" + result + "</span>";
         }
     }
 }
