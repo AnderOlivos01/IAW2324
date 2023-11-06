@@ -9,69 +9,59 @@
 <h1>Convertidor de monedas</h1>
 <h2>Euros a Dolares</h2>
 <p>Introduce el valor en euros</p>
-<input type="text" id="euros">
-<button id="aDolar" onclick="positivo(1)">Convertir</button>
-<p id="valorDolar"></p>
+<input type="text" id="euro">
+<button id="aDolar" onclick="positivo(euro,valoreuro)">Convertir</button>
+<p id="valoreuro"></p>
+
 
 <h2>Dolares a Euros</h2>
 <p>Introduce el valor en dolares</p>
 <input type="text" id="dolar">
-<button id="aEuro" onclick="positivo(2)">Convertir</button>
-<p id="valorEuro"></p>
+<button id="aEuro" onclick="positivo(dolar,valordolar)">Convertir</button>
+<p id="valordolar"></p>
 
 <script>
-    function positivo(a){
-        var x= parseFloat(document.getElementById('euros').value);
-        var y= parseFloat(document.getElementById('dolar').value);
 
-        if(a==1){
-            if(isNaN(x))
-        {
-            document.getElementById('valorDolar').innerHTML="Introduzca valores numéricos, por favor";
+    function positivo(a,b){
+    
+//Verificamos que sean valores numéricos
+
+        if(isNaN(a.value)){
+            b.innerHTML="Introduzca valores numéricos, por favor";
         }
         else{
-            if(x<0){
-                document.getElementById('valorDolar').innerHTML="Introduzca valores positivos"
+
+//Verificamos que sean valores positivos
+
+            if(a.value<0){
+                b.innerHTML="Introduzca valores positivos"
             }
             else{
-                convertirEuros();
-            }
-        }
-        }
-        else{
-            if(a==2){
-                if(isNaN(y))
-                {
-                    document.getElementById('valorEuro').innerHTML="Introduzca valores numéricos, por favor";
+
+//Asignamos las funciones correspondientes en cada caso
+
+                if(a==euro){
+                    convertirEuros(a,b);
                 }
                 else{
-                    if(y<0){
-                        document.getElementById('valorEuro').innerHTML="Introduzca valores positivos"
-                    }
-                    else{
-                        convertirDolares();
-                    }
+                    convertirDolares(a,b);
                 }
             }
-            else{
-                return 0;
-                }
-            }
-
+        }
     }
 
-    function convertirEuros(){
-        var a=document.getElementById('euros').value;
-        var b= a*1.07;
-        b= b.toFixed(2);
-        document.getElementById('valorDolar').innerHTML="<b>"+b+"$</b>";
+//Declaramos la función que transforma los euros a dolares
+
+    function convertirEuros(a,b){
+        var c= (a.value*1.07).toFixed(2);
+        b.innerHTML="<b>"+c+" $</b>";
     }
 
-    function convertirDolares(){
-        var a=document.getElementById('dolar').value;
-        var b= a*0.93;
-        b= b.toFixed(2);
-        document.getElementById('valorEuro').innerHTML="<b>"+b+"€</b>";
+//Declaramos la función que transforma los dolares a euros
+
+    function convertirDolares(a,b){
+        var c= (a.value*0.93).toFixed(2);
+        b.innerHTML="<b>"+c+" €</b>";
     }
 </script>
 </body>

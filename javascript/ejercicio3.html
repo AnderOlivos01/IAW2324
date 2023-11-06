@@ -9,27 +9,30 @@
     <h1>Letra De DNI</h1>
     <p>Introduzca <b>sólo los números</b> de su DNI</p>
     <input type="text" placeholder="12345678" id="dni">
-    <button onclick="verificar()">Calcular letra</button>
+    <button onclick="verificar(dni,resultado)">Calcular letra</button>
     <p id="resultado"></p>
 
 <script>
 
-function verificar(){
-    var x=parseFloat(document.getElementById('dni').value);
-    if(isNaN(x)){
-        document.getElementById('resultado').innerHTML="<b style='color:red'>Introduzca valores numéricos</b>";
+//Declaramos el array de las letras
+var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+
+function verificar(a,b){
+
+//Verificamos que no haya letras
+    if(isNaN(a.value)){
+        b.innerHTML="<b style='color:red'>Introduzca valores numéricos</b>";
     }
     else{
-        var cadena=x.toString();
-        if(cadena.length==8)
+//Verificamos que tenga exactamente 8 dígitos
+        if(a.value.toString().length==8)
         {
-            var resto=x%23;
-            var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
-            document.getElementById('resultado').innerHTML="Su letra es <b>"+letras[resto]+"</b>";
-    
+            var resto=a.value%23;
+            b.innerHTML="Su letra es <b>"+letras[resto]+"</b>";
         }
         else{
-            document.getElementById('resultado').innerHTML="<b style='color:red'>Introduzca exactamente 8 dígitos</b>";
+//Si no tiene 8 dígitos, mostrar error
+            b.innerHTML="<b style='color:red'>Introduzca exactamente 8 dígitos</b>";
             }
     }
 }

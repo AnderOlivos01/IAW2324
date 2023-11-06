@@ -14,41 +14,19 @@
     </div>
 
     <div id="contenedorB">
-        <button id="ocultar1" onclick="ocultar(1)">Ocultar</button>
-        <button id="ocultar1" onclick="ocultar(2)">Ocultar</button>
-        <button id="ocultar1" onclick="ocultar(3)">Ocultar</button>
+        <button id="ocultar1" onclick="ocultar(rojo)">Ocultar</button>
+        <button id="ocultar1" onclick="ocultar(verde)">Ocultar</button>
+        <button id="ocultar1" onclick="ocultar(azul)">Ocultar</button>
     </div>
 
 <script>
     function ocultar(a){
-    if(a==1){
-        if(document.getElementById('rojo').className=='oculto'){
-            document.getElementById('rojo').className=''
+        if(a.className=='oculto'){
+            a.className='';
         }
         else{
-            document.getElementById('rojo').className='oculto';
+            a.className='oculto';
         } 
-    }
-    else{
-        if(a==2){
-            if(document.getElementById('verde').className=='oculto'){
-                document.getElementById('verde').className=''
-            }
-            else{
-                document.getElementById('verde').className='oculto';
-            }
-        }
-        else{
-            if(a==3){
-                if(document.getElementById('azul').className=='oculto'){
-                    document.getElementById('azul').className=''
-                }
-                else{
-                    document.getElementById('azul').className='oculto';
-                }
-            }
-        }  
-    }
 }
 </script>
 </body>
