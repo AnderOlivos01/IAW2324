@@ -1,0 +1,38 @@
+#contenedorC{
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+}
+#rojo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: red;
+}
+#verde{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: green;
+}
+#azul{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: blue;
+}
+
+#contenedorB{
+    width: 200px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.oculto{
+    background-color: transparent !important;
+}

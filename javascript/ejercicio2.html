@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+<h1>Convertidor de monedas</h1>
+<h2>Euros a Dolares</h2>
+<p>Introduce el valor en euros</p>
+<input type="text" id="euros">
+<button id="aDolar" onclick="positivo(1)">Convertir</button>
+<p id="valorDolar"></p>
+
+<h2>Dolares a Euros</h2>
+<p>Introduce el valor en dolares</p>
+<input type="text" id="dolar">
+<button id="aEuro" onclick="positivo(2)">Convertir</button>
+<p id="valorEuro"></p>
+
+<script>
+    function positivo(a){
+        var x= parseFloat(document.getElementById('euros').value);
+        var y= parseFloat(document.getElementById('dolar').value);
+
+        if(a==1){
+            if(isNaN(x))
+        {
+            document.getElementById('valorDolar').innerHTML="Introduzca valores numéricos, por favor";
+        }
+        else{
+            if(x<0){
+                document.getElementById('valorDolar').innerHTML="Introduzca valores positivos"
+            }
+            else{
+                convertirEuros();
+            }
+        }
+        }
+        else{
+            if(a==2){
+                if(isNaN(y))
+                {
+                    document.getElementById('valorEuro').innerHTML="Introduzca valores numéricos, por favor";
+                }
+                else{
+                    if(y<0){
+                        document.getElementById('valorEuro').innerHTML="Introduzca valores positivos"
+                    }
+                    else{
+                        convertirDolares();
+                    }
+                }
+            }
+            else{
+                return 0;
+                }
+            }
+
+    }
+
+    function convertirEuros(){
+        var a=document.getElementById('euros').value;
+        var b= a*1.07;
+        b= b.toFixed(2);
+        document.getElementById('valorDolar').innerHTML="<b>"+b+"$</b>";
+    }
+
+    function convertirDolares(){
+        var a=document.getElementById('dolar').value;
+        var b= a*0.93;
+        b= b.toFixed(2);
+        document.getElementById('valorEuro').innerHTML="<b>"+b+"€</b>";
+    }
+</script>
+</body>
+</html>
