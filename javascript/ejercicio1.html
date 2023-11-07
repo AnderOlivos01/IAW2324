@@ -7,17 +7,21 @@
     <link rel="stylesheet" href="circulos.css">
 </head>
 <body>
-    <div id="contenedorC">
-        <div id="rojo"></div>
-        <div id="verde"></div>
-        <div id="azul"></div>
+    <div id="container">
+        <h1>Muestra/Oculta Círculos</h1>
+        <div id="contenedorC">
+            <div id="rojo"></div>
+            <div id="verde"></div>
+            <div id="azul"></div>
+        </div>
+    
+        <div id="contenedorB">
+            <button id="ocultar1" onclick="ocultar(rojo)">Ocultar</button>
+            <button id="ocultar1" onclick="ocultar(verde)">Ocultar</button>
+            <button id="ocultar1" onclick="ocultar(azul)">Ocultar</button>
+        </div>
     </div>
-
-    <div id="contenedorB">
-        <button id="ocultar1" onclick="ocultar(rojo)">Ocultar</button>
-        <button id="ocultar1" onclick="ocultar(verde)">Ocultar</button>
-        <button id="ocultar1" onclick="ocultar(azul)">Ocultar</button>
-    </div>
+    
 
 <script>
     function ocultar(a){

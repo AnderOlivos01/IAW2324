@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <link rel="stylesheet" href="imc.css">
+</head>
+<body>
+    <div id="contenedor">
+        <h1>Calculadora IMC</h1>
+        <p>Introduzca su altura (cm)</p>
+        <input type="text" id="altura">
+        <p id="veraltura"></p>
+        <p>Introduzca su peso (kg)</p>
+        <input type="text" id="peso">
+        <p id="verpeso"></p>
+        <button id="boton" onclick="verificar(altura,peso,resultado,veraltura,verpeso)">Calcular IMC</button>
+        <p id="resultado"></p>
+    </div>
+
+<script>
+
+function verificar(a,b,c,d,e){
+    if(isNaN(parseFloat(a.value))){
+        d.innerHTML="<b>Introduzca un valor numérico</b>";
+    }
+    else{
+        d.innerHTML="";
+        if(isNaN(parseFloat(b.value))){
+        e.innerHTML="<b>Introduzca un valor numérico</b>";
+    }
+    else{
+        e.innerHTML="";
+        var res=(parseFloat(b.value)/Math.pow(parseFloat(a.value)*0.01,2)).toFixed(1);
+        switch (res){
+            case res<18.5
+        }
+    }
+    }
+}
+
+</script>    
+</body>
+</html>
