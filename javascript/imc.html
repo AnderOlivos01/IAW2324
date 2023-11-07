@@ -8,15 +8,17 @@
 </head>
 <body>
     <div id="contenedor">
-        <h1>Calculadora IMC</h1>
-        <p>Introduzca su altura (cm)</p>
-        <input type="text" id="altura">
-        <p id="veraltura"></p>
-        <p>Introduzca su peso (kg)</p>
-        <input type="text" id="peso">
-        <p id="verpeso"></p>
-        <button id="boton" onclick="verificar(altura,peso,resultado,veraltura,verpeso)">Calcular IMC</button>
-        <p id="resultado"></p>
+        <div id="borde">
+            <h1>Calculadora IMC</h1>
+            <p>Introduzca su altura (cm)</p>
+            <input type="text" id="altura">
+            <p id="veraltura"></p>
+            <p>Introduzca su peso (kg)</p>
+            <input type="text" id="peso">
+            <p id="verpeso"></p>
+            <button id="boton" onclick="verificar(altura,peso,resultado,veraltura,verpeso)">Calcular IMC</button>
+            <p id="resultado"></p>
+        </div>
     </div>
 
 <script>
@@ -29,17 +31,40 @@ function verificar(a,b,c,d,e){
         d.innerHTML="";
         if(isNaN(parseFloat(b.value))){
         e.innerHTML="<b>Introduzca un valor numérico</b>";
-    }
-    else{
-        e.innerHTML="";
-        var res=(parseFloat(b.value)/Math.pow(parseFloat(a.value)*0.01,2)).toFixed(1);
-        switch (res){
-            case res<18.5
         }
-    }
+        else{
+            e.innerHTML="";
+            var res=(parseFloat(b.value)/Math.pow(parseFloat(a.value)*0.01,2)).toFixed(1);
+            switch (true){
+                case res<18.5:
+                    c.innerHTML="<p><span>IMC:</span>"+res+"</p><p><span>Peso corporal:</span> inferior al normal</p>";
+                    break;
+                case res>=18.5 && res<=24.9:
+                    c.innerHTML="<p><span>IMC:</span>"+res+"</p><p><span>Peso corporal:</span> normal</p>";
+                    break;
+                case res>=25.0 && res<=29.9:
+                    c.innerHTML="<p><span>IMC:</span> "+res+"</p><p><span>Peso corporal:</span> superior al normal</p>";
+                    break;
+                case res>29.9:
+                    c.innerHTML="<p><span>IMC:</span> "+res+"</p><p><span>Peso corporal:</span> obesidad</p>";
+                    break;
+            }
+        }
     }
 }
 
+
+document.getElementById('altura').addEventListener("keydown",(event)=>{
+    if(event.key=="Enter"){
+        verificar(altura,peso,resultado,veraltura,verpeso);
+    }
+}, false);
+
+document.getElementById('peso').addEventListener("keydown",(event)=>{
+    if(event.key=="Enter"){
+        verificar(altura,peso,resultado,veraltura,verpeso);
+    }
+}, false);
 </script>    
 </body>
 </html>
