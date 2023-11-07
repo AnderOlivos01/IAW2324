@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialText</title>
+    <link rel="stylesheet" href="contenedor-publicar.css">
+    <link rel="stylesheet" href="contenedor-subidos.css">
+</head>
+<body>
+    <div id="contenedor-publicar">
+        <div id="titulo">
+            <h1>SocialText</h1>
+            <img id="icon" src="icon.png" alt="upsss...hubo un error">
+        </div>
+        <div id="publicacion">
+            <p id="pensando">¿En qué estás pensando?</p>
+            <textarea id="mensaje" cols="40" rows="5" placeholder="Hoy será un día de locos..."></textarea>
+            <button id="botonpubli" onclick="publicar(mensaje,comentarios)">PUBLICAR</button>
+        </div>
+    </div>
+    <div id="contenedor-subidos">
+        <div id="">
+            <h2>COMENTARIOS SUBIDOS</h2>
+            <div id="comentarios"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

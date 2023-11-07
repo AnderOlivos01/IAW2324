@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(163, 215, 255);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#contenedor-publicar{
+    width: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+}
+
+#titulo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+
+h1{
+    font-size: 70px;
+    margin:0;
+    color:  #0072ff;
+}
+
+#icon{
+    width: 60px;
+    height: auto;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#mensaje{
+    border: 0;
+    resize: none;
+    background-color: #00408ec0;
+    color: white;
+    margin: 10px;
+}
+
+#publicacion{
+    height: fit-content;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+#botonpubli{
+    border: 0;
+    border-radius: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 30px;
+    width: fit-content;
+    padding: 5px;
+    background-color: white;
+}
+
+#botonpubli:hover{
+    background-color: #00408ec0;
+    color: white;
+}
