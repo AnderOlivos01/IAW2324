@@ -36,6 +36,10 @@ function verificar(a,b){
             }
     }
 }
-
+document.getElementById('dni').addEventListener("keydown",(event)=>{
+    if(event.key=="Enter"){
+        verificar(dni,resultado);
+    }
+}, false);
 </script>
 </html>
