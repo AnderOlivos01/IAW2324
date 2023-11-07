@@ -24,12 +24,12 @@
 <script>
 
 function verificar(a,b,c,d,e){
-    if(isNaN(parseFloat(a.value))){
+    if(isNaN(parseFloat(a.value))||a.value==""){
         d.innerHTML="<b>Introduzca un valor numérico</b>";
     }
     else{
         d.innerHTML="";
-        if(isNaN(parseFloat(b.value))){
+        if(isNaN(parseFloat(b.value))||b.value==""){
         e.innerHTML="<b>Introduzca un valor numérico</b>";
         }
         else{
