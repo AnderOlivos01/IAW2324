@@ -3,13 +3,8 @@ haycomenarios(comentarios);
 
 function publicar(a,b){
     if(a.value!=''){
-        var newcoments='';
         oldcoments.push(a.value);
-        oldcoments.sort();
-        for(var i=0;i<oldcoments.length;i++){
-             newcoments+="<div class='coment-div'><p class='coment-p'>"+oldcoments[i]+"</p><img class='basura' src='trash.png' onclick='borrar("+i+")'></div>";
-        }
-        b.innerHTML=newcoments;
+        actualizar();
     }
 }
 
@@ -20,17 +15,23 @@ function haycomenarios(a){
 }
 
 function borrar(a,b){
+    oldcoments[a].className
     oldcoments.splice(a,1);
-    oldcoments.sort();
-        var newcoments='';
-        for(var i=0;i<oldcoments.length;i++){
-            newcoments+="<div class='coment-div'><p class='coment-p'>"+oldcoments[i]+"</p><img class='basura' src='trash.png' onclick='borrar("+i+")'></div>";
-        }
-        document.getElementById('comentarios').innerHTML=newcoments;
-    }
+    actualizar();
+}
+    
 
 document.getElementById('mensaje').addEventListener("keydown",(event)=>{
     if(event.key=="Enter"){
         publicar(mensaje,comentarios);
     }
 }, false);
+
+function actualizar(){
+    oldcoments.sort();
+    var newcoments='';
+    for(var i=0;i<oldcoments.length;i++){
+        newcoments+="<div class='coment-div'><p class='coment-p'>"+oldcoments[i]+"</p><img class='basura' src='trash.png' onclick='borrar("+i+")'></div>";
+    }
+    document.getElementById('comentarios').innerHTML=newcoments;
+}

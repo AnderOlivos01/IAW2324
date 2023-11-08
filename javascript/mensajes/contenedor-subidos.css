@@ -3,19 +3,23 @@
     width: 50%;
     height: 100vh;
     padding-left: 30px;
+    display: flex;
 }
 
 #no-coments{
     font-size: x-large;
     width: 100%;
     text-align: center;
+    color: white;
 }
 
 #comentarios{
+    align-self: center;
     overflow-x: hidden;
     overflow-y: scroll;
-    height: 70vh;
-    background-color: #daf1ff;
+    height: 80vh;
+    width: 100%;
+    background-color: #00408ec0;
     margin: 10px 30px 10px 0px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -24,7 +28,7 @@
 .coment-div{
     width: 80%;
     height: fit-content;
-    background-color: #00408ec0;
+    background-color: rgb(189, 220, 243);
     color: white;
     border: 2px solid black;
     border-radius: 10px;
@@ -38,8 +42,10 @@
 
 .coment-p{
     margin: 0;
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
+    color: black;
+    text-wrap: wrap;
 }
 
 .basura{

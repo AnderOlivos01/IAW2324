@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: rgb(163, 215, 255);
+    background-color: rgb(175, 220, 254);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display: flex;
     flex-direction: row;
@@ -12,14 +12,15 @@ body{
 }
 
 #contenedor-publicar{
+    align-self: baseline;
     width: 50%;
-    height: 80vh;
+    height: 70vh;
     box-sizing: border-box;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: baseline;
+    justify-content: center;
 }
 
 #titulo{
@@ -39,7 +40,7 @@ h1{
     width: 60px;
     height: auto;
     margin-left: 10px;
-    margin-top: 10px;
+    margin-top: 10px;    
 }
 
 #mensaje{
