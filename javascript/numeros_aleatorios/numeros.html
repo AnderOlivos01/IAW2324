@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="numeros.css">
     <link rel="stylesheet" href="empezar.css">
     <link rel="stylesheet" href="juego.css">
+    <link rel="stylesheet" href="fin.css">
     <link rel="shortcut icon" href="" type="image/x-icon">
 </head>
 <body>
@@ -18,23 +19,23 @@
             <button id="boton-empezar" onclick="fempezar(empezar,juego)">EMPEZAR</button>
         </div>
         <div id="juego">
-            <p>El número se comprende entre <b>0 y 100</b></p>
-            <p id="cuidado">¡CUIDADO!</p>
+            <p id="comprende">El número se comprende entre <b>0 y 100</b></p>
             <p id="tienestrys"></p>
             <input type="text" id="intento">
             <button id="boton-probar" onclick="intentar(intento,pista),tienes(tienestrys)">PROBAR</button>
             <p id="pista"></p>
         </div>
         <div id="finbueno">
-            <p>¡QUE SUERTE!</p>
-            <p>Has acertado</p>
+            <p class="acertado">🎊¡HAS ACERTADO!🎊</p>
+            <p style="font-size: larger;">Que suerte tienes...🤔</p>
+            <p style="font-size: larger;padding: 20px;text-align: center;">Me apuesto lo que sea que no me vuelves a ganar...🥱​</p>
             <button id="againgood" onclick="cambio(finbueno,juego),reseteo(pista)">JUGAR OTRA VEZ</button>
         </div>
         <div id="finmalo">
-            <p>Vaya...parece que no tuviste mucha suerte</p>
-            <p>El número era:</p>
-            <p id="era" style="font-size: x-large;"></p>
-            <button id="againbad" onclick="cambio(finmalo,juego),reseteo(pista)">Intentar de nuevo</button>
+            <p class="acertado">Vaya...parece que no tuviste mucha suerte jeje😆</p>
+            <p style="font-size: larger;">El número era:</p>
+            <p id="era" style="font-size: x-large;font-weight: bold;"></p>
+            <button id="againbad" onclick="cambio(finmalo,juego),reseteo(pista)">Intentarlo de nuevo</button>
         </div>
     </div>
 

@@ -3,12 +3,12 @@ reseteo(pista);
 
 function fempezar(a,b){
     a.style.display='none';
-    b.style.display='block';
+    b.style.display='flex';
     tienes(tienestrys);
 }
 
 function intentar(a,b,c){
-    if(a.value==random){
+    if(parseFloat(a.value)==random){
         cambio(juego,finbueno)
         reseteo(pista);
     }
@@ -20,11 +20,17 @@ function intentar(a,b,c){
             maloera(era);
         }
         else{
-            if(a.value<random){
+            if(parseFloat(a.value)<random){
                 b.innerHTML="El número es más grande"
             }
             else{
-                b.innerHTML="El número es más pequeño"
+                if(parseFloat(a.value)>random){
+                    b.innerHTML="El número es más pequeño"
+                }
+                else{
+                    
+                    b.innerHTML="Error"
+                }
             }
         }
     }
@@ -32,13 +38,13 @@ function intentar(a,b,c){
 
 function cambio(a,b){
     a.style.display='none';
-    b.style.display='block';
+    b.style.display='flex';
 }
 
 function reseteo(a){
     trys=5;
     random=Math.floor(Math.random() * (101));
-    console.log(random);
+    tienes(tienestrys);
     a.innerHTML='';
 }
 
@@ -47,5 +53,12 @@ function maloera(c){
 }
 
 function tienes(a){
-    a.innerHTML="Te quedan <b>"+trys+" intentos</b>";
+    a.innerHTML="Te quedan <b style=color:red>"+trys+" intentos</b>";
 }
+
+document.getElementById('intento').addEventListener("keydown",(event)=>{
+    if(event.key=="Enter"){
+        intentar(intento,pista);
+        tienes(tienestrys);
+    }
+}, false);

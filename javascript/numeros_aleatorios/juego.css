@@ -1,0 +1,40 @@
+#juego{
+    padding-top: 30px;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+}
+
+
+#comprende{
+    text-align: center;
+    font-size: 30px;
+}
+
+#tienestrys{
+    font-size: 18px;
+}
+
+#intento{
+    border: 0;
+    height: 100px;
+    width: 30%;
+    font-size: xx-large;
+    text-align: center;
+}
+
+#boton-probar{
+    box-shadow: 3px 3px rgb(180, 180, 180);
+    margin: 40px;
+    border-radius: 10px;
+    background-color: #b73326;
+    color: white;
+    width: auto;
+    height: fit-content;
+    padding: 10px;
+    font-size: x-large;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
