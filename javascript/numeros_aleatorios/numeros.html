@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Numbers</title>
+    <link rel="stylesheet" href="numeros.css">
+    <link rel="stylesheet" href="empezar.css">
+    <link rel="stylesheet" href="juego.css">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+</head>
+<body>
+
+    <div id="caja">
+        <div id="empezar">
+            <h2>¿Podrás adivinar el número que estoy pensando?</h1>
+            <img style="width: 30%; margin: 30px 40px 0px 0px;" src="dice.png" alt="ups...algo no fue como esperaba">
+            <button id="boton-empezar" onclick="fempezar(empezar,juego)">EMPEZAR</button>
+        </div>
+        <div id="juego">
+            <p>El número se comprende entre <b>0 y 100</b></p>
+            <p id="cuidado">¡CUIDADO!</p>
+            <p id="tienestrys"></p>
+            <input type="text" id="intento">
+            <button id="boton-probar" onclick="intentar(intento,pista),tienes(tienestrys)">PROBAR</button>
+            <p id="pista"></p>
+        </div>
+        <div id="finbueno">
+            <p>¡QUE SUERTE!</p>
+            <p>Has acertado</p>
+            <button id="againgood" onclick="cambio(finbueno,juego),reseteo(pista)">JUGAR OTRA VEZ</button>
+        </div>
+        <div id="finmalo">
+            <p>Vaya...parece que no tuviste mucha suerte</p>
+            <p>El número era:</p>
+            <p id="era" style="font-size: x-large;"></p>
+            <button id="againbad" onclick="cambio(finmalo,juego),reseteo(pista)">Intentar de nuevo</button>
+        </div>
+    </div>
+
+<script src="numeros.js"></script>
+</body>
+</html>

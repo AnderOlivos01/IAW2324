@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(109, 35, 0);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+#caja{
+    width: 450px;
+    height: 600px;
+    border: 5px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgb(247, 228, 205);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h2{
+    text-align: center;
+}
+
+#boton-empezar{
+    box-shadow: 3px 3px rgb(180, 180, 180);
+    margin: 40px;
+    border-radius: 10px;
+    background-color: #b73326;
+    color: white;
+    width: auto;
+    height: fit-content;
+    padding: 10px;
+    font-size: x-large;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#boton-empezar:hover{
+    background-color: rgb(105, 0, 0);
+}
+
