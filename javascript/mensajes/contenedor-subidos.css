@@ -2,4 +2,50 @@
     background-color: white;
     width: 50%;
     height: 100vh;
+    padding-left: 30px;
+}
+
+#no-coments{
+    font-size: x-large;
+    width: 100%;
+    text-align: center;
+}
+
+#comentarios{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 70vh;
+    background-color: #daf1ff;
+    margin: 10px 30px 10px 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.coment-div{
+    width: 80%;
+    height: fit-content;
+    background-color: #00408ec0;
+    color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 5px 0px 5px 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.coment-p{
+    margin: 0;
+    max-width: 100%;
+    height: auto;
+}
+
+.basura{
+    width: 30px;
+}
+
+.basura:hover{
+    cursor: pointer;
 }

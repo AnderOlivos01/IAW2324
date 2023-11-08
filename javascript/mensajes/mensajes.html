@@ -6,6 +6,7 @@
     <title>SocialText</title>
     <link rel="stylesheet" href="contenedor-publicar.css">
     <link rel="stylesheet" href="contenedor-subidos.css">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
 </head>
 <body>
     <div id="contenedor-publicar">
@@ -15,15 +16,15 @@
         </div>
         <div id="publicacion">
             <p id="pensando">¿En qué estás pensando?</p>
-            <textarea id="mensaje" cols="40" rows="5" placeholder="Hoy será un día de locos..."></textarea>
+            <input id="mensaje" type="text" placeholder="Hoy será un día de locos...">
             <button id="botonpubli" onclick="publicar(mensaje,comentarios)">PUBLICAR</button>
         </div>
     </div>
     <div id="contenedor-subidos">
-        <div id="">
             <h2>COMENTARIOS SUBIDOS</h2>
-            <div id="comentarios"></div>
-        </div>
+            <div id="comentarios">
+
+            </div>
     </div>
 
     <script src="script.js"></script>

@@ -7,10 +7,13 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
 #contenedor-publicar{
     width: 50%;
+    height: 80vh;
     box-sizing: border-box;
     overflow: hidden;
     display: flex;
@@ -40,11 +43,13 @@ h1{
 }
 
 #mensaje{
-    border: 0;
-    resize: none;
+    border: 2px solid white;
+    height: 50px;
+    width: 400px;
     background-color: #00408ec0;
     color: white;
     margin: 10px;
+    padding: 10px;
 }
 
 #publicacion{
@@ -63,9 +68,12 @@ h1{
     width: fit-content;
     padding: 5px;
     background-color: white;
+    align-self: self-end;
+    margin: 10px;
 }
 
 #botonpubli:hover{
     background-color: #00408ec0;
     color: white;
+    border: 2px solid white;
 }
