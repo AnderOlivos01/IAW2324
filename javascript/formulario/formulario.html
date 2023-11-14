@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="formulario.css">
+</head>
+<body>
+    <div id="contenedor">
+        <div id="caja_padre">
+            <h1>Formulario</h1>
+
+            <div id="caja1" class="cajaflex">
+
+                <p>Nombre</p>
+                <input type="text" id="i_nombre">
+                <p id="r_nombre"></p>
+    
+                <p>Apellido</p>
+                <input type="text" id="i_apellido">
+                <p id="r_nombre"></p>
+    
+                <p>Correo electrónico</p>
+                <input type="text" id="i_correo">
+                <p id="r_nombre"></p>
+
+                <div class="caja_botones">
+                    <button onclick="pasar(caja1,caja2)">Siguiente</button>
+                </div>
+
+            </div>
+           
+
+            <div id="caja2" class="cajaflex">
+
+                <p>Dirección</p>
+                <input type="text" id="i_direccion">
+    
+                <p>Ciudad</p>
+                <input type="text" id="i_ciudad">
+
+                <p>Teléfono</p>
+                <input type="text" id="i_telefono">
+
+                <div class="caja_botones">
+                    <button onclick="pasar(caja2,caja1)">Atrás</button>
+                    <button onclick="pasar(caja2,caja3)">Siguiente</button>
+                </div>
+
+            </div>
+            
+
+            <div id="caja3" class="cajaflex">
+
+                <p>DNI</p>
+                <input type="text" id="i_dni">
+                <p id="r_nombre"></p>
+    
+                <p>PIN</p>
+                <input type="text" id="i_pin">
+                <p id="r_nombre"></p>
+    
+                <p>Confirmar PIN</p>
+                <input type="text" id="i_pin_re">
+                <p id="r_pin_re"></p>
+
+                <div class="caja_botones">
+                    <button onclick="pasar(caja3,caja2)">Atrás</button>
+                    <button onclick="pasar(caja3,caja4)">Finalizar</button>
+                </div>
+
+            </div>
+
+            <div id="caja4" class="cajaflex">
+                <h3>¡ENHORABUENA!</h3>
+                <p>Tu formulario se ha enviado correctamente</p>
+                <button onclick="pasar(caja4,caja1)">Nuevo formulario</button>
+            </div>
+
+        </div>
+    </div>
+
+<script src="formulario.js"></script>
+</body>
+</html>
