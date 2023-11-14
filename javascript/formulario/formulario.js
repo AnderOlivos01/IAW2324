@@ -78,8 +78,16 @@ function validar2(aa,ab,ba,bb,ca,cb){
                 else{
                     cb.style.display="none";
                     pasar(caja3,caja4);
+                    usuario(i_nombre,i_apellido,i_telefono,p_usuario);
                 }
             }
         }
     }
+}
+
+function usuario(a,b,c){
+    var nombre=Array.from(a.value);
+    var apellido=Array.from(b.value);
+    var telefono=Array.from(c.value);
+    p_usuario.innerHTML="Tu usuario es: <b>"+nombre[0]+nombre[1]+apellido[0]+apellido[1]+telefono[telefono.length-1]+telefono[telefono.length-2]+telefono[telefono.length-3]+"</b>";
 }
