@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
     <link rel="stylesheet" href="formulario.css">
+    <link rel="stylesheet" href="caja1.css">
 </head>
 <body>
     <div id="contenedor">
@@ -15,18 +16,18 @@
 
                 <p>Nombre</p>
                 <input type="text" id="i_nombre">
-                <p id="r_nombre"></p>
+                <p class="obligatorio" id="r_nombre"></p>
     
                 <p>Apellido</p>
                 <input type="text" id="i_apellido">
-                <p id="r_nombre"></p>
+                <p class="obligatorio" id="r_apellido"></p>
     
                 <p>Correo electrónico</p>
                 <input type="text" id="i_correo">
-                <p id="r_nombre"></p>
+                <p class="obligatorio" id="r_correo"></p>
 
                 <div class="caja_botones">
-                    <button onclick="pasar(caja1,caja2)">Siguiente</button>
+                    <button onclick="validar1(i_nombre,r_nombre,i_apellido,r_apellido,i_correo,r_correo)">Siguiente</button>
                 </div>
 
             </div>
@@ -55,19 +56,19 @@
 
                 <p>DNI</p>
                 <input type="text" id="i_dni">
-                <p id="r_nombre"></p>
+                <p class="obligatorio"  id="r_dni"></p>
     
                 <p>PIN</p>
                 <input type="text" id="i_pin">
-                <p id="r_nombre"></p>
+                <p class="obligatorio"  id="r_pin"></p>
     
                 <p>Confirmar PIN</p>
                 <input type="text" id="i_pin_re">
-                <p id="r_pin_re"></p>
+                <p class="obligatorio" id="r_pin_re"></p>
 
                 <div class="caja_botones">
                     <button onclick="pasar(caja3,caja2)">Atrás</button>
-                    <button onclick="pasar(caja3,caja4)">Finalizar</button>
+                    <button onclick="validar2(i_dni,r_dni,i_pin,r_pin,i_pin_re,r_pin_re)">Finalizar</button>
                 </div>
 
             </div>
