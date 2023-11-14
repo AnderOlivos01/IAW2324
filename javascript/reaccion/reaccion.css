@@ -18,14 +18,20 @@ h1{
     color: rgb(0, 90, 0);
 }
 
+h3{
+    margin: 6px;
+}
+
 #juego{
-    width: 600px;
+    width: 900px;
     height: 600px;
     border: 5px solid black;
     border-radius: 10px;
     background-color: white;
+    overflow: hidden;
 }
 
 #forma{
     display: none;
+    position: relative;
 }
