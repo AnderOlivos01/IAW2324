@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elige cuál esconder</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h3>Elige qué párrafo esconder</h3>
+    <p id="primero">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, ipsa laborum vel dicta voluptatum aut magni. Dignissimos error, deleniti beatae natus debitis dolor nihil, ex iure ratione, qui nobis aspernatur.</p>
+    <p id="segundo">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat labore voluptatum molestias nulla sequi laboriosam beatae fugiat quos iusto eaque et provident non, accusamus libero. Explicabo vitae incidunt accusamus distinctio.</p>
+    <p id="tercero">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi placeat et velit quidem provident fugiat incidunt culpa magnam, accusantium harum, similique odio qui, consequuntur id quisquam quos suscipit vel veritatis.</p>
+    <button onclick="esconder()">Esconder</button>
+
+<script>
+function esconder() {
+  let elegido = prompt("Elige el párrafo a eliminar");
+  if(elegido=="todos"){
+    $("p").hide();
+  }
+  else{
+    $("#"+elegido).hide();
+  }
+}
+</script>
+</body>
+</html>
