@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RETO #44</title>
+    <style>
+
+    #quiz-time-left {    
+    width: 0;
+    height: 100%;
+    animation: progreso 3s linear;
+    color: #eb7260;
+    background: #eb7260;
+    border-top-right-radius:  10px;
+    border-bottom-right-radius:  10px;
+    }
+
+    #page-mod-quiz-summary #quiz-timer {
+    text-align: center;
+    display: none;
+    position: absolute;
+    left: -50px;
+    top: -50px;
+    }
+    #quiz-timer {
+    border: 2px solid #eb7260;
+    height: 20px;
+    width: 300px;
+
+}
+
+@keyframes progreso {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
+}
+    </style>
+</head>
+<body>
+<p></p>
+<div id="juego">
+    <p id="operaciones"></p>
+</div>
+
+<input type="text" id="intento">
+<button onclick="escorrecto(intento)">Probar</button>
+
+<div id="quiz-timer" role="timer" aria-atomic="true" aria-relevant="text" style="display: block;">
+    <div id="quiz-time-left"></div>
+</div>
+<!--
+
+Crea un juego interactivo por terminal en el que tendrás que adivinar 
+el resultado de diferentes
+operaciones matemáticas aleatorias (suma, resta, multiplicación 
+o división de dos números enteros).
+- Tendrás 3 segundos para responder correctamente.
+- El juego finaliza si no se logra responder en ese tiempo.
+- Al finalizar el juego debes mostrar cuántos cálculos has acertado.
+- Cada 5 aciertos debes aumentar en uno el posible número de cifras 
+  de la operación (cada vez en un operando):
+  - Preguntas 1 a 5: X (entre 0 y 9) operación Y (entre 0 y 9)
+  - Preguntas 6 a 10: XX (entre 0 y 99) operación Y (entre 0 y 9)
+  - Preguntas 11 a 15: XX operación YY
+  - Preguntas 16 a 20: XXX (entre 0 y 999) operación YY
+  ...
+-->
+
+<script>
+    var resultado;
+    randomTodo();
+
+
+
+
+    function randomTodo(){
+        var operador=["+","-","*","/"];
+        var num_operador=Math.floor(Math.random()*4);
+        var num1=parseInt(Math.floor(Math.random()*10));
+        var num2=parseInt(Math.floor(Math.random()*10));
+        document.getElementById("operaciones").innerHTML=num1+operador[num_operador]+num2;
+        switch(num_operador){
+            case 0: 
+                resultado=num1+num2;
+                break;
+            case 1: 
+                resultado=num1-num2;
+                break;
+            case 2: 
+                resultado=num1*num2;
+                break;
+            case 3: 
+                resultado=num1/num2;
+                break;
+            default:
+                alert("Error");
+        }
+        console.log(resultado);
+    }
+
+    function escorrecto(a){
+        if(a.value==resultado){
+            randomTodo();
+        }
+        else{
+            if(a.value!=resultado){
+                alert("FALLASTE PUTO");
+            }
+            else{
+
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
