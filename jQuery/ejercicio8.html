@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <img id="imagen1" src="este es el src de la imagen" alt="Imagen">
+    <p id="parrafo1">Hola!!¿Cómo estás hoy?</p>
+    <button id="src_imagen">Obtener src de la imagen</button>
+    <button id="html_head">Obtener html del encabezado</button>
+    <button id="html_p">Obtener html de un párrafo</button>
+<script>
+    $(document).ready(function(){
+        $("#src_imagen").on("click",function(){
+            alert($("#imagen1").attr("src"));
+        })
+
+        $("#html_head").on("click",function(){
+            alert($("head").html());
+        })
+
+        $("#html_p").on("click",function(){
+            alert($("#parrafo1").html());
+        })
+    })
+</script>
+</body>
+</html>

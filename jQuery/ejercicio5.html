@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        p{
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sequi ad enim quod voluptates voluptatum? Commodi vero nostrum voluptate fuga laudantium reiciendis unde quasi, sed sit, veniam cum quam quae?</p>
+    <button id="grande">FadeIn</button>
+    <button id="pequeno">FadeOut</button>
+<script>
+    $(document).ready(function(){
+        $("#grande").on("click",function(){
+            var tamano=parseInt($("p:odd").css("fontSize"));
+            $("p").css("color","red").fadeIn(500);
+        })
+        $("#pequeno").on("click",function(){
+            var tamano=parseInt($("p:odd").css("fontSize"));
+            $("p").css("color","blue").fadeOut(500);
+        })
+    });
+</script>
+</body>
+</html>

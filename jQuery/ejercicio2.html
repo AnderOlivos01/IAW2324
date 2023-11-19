@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>
+        Encabezado
+    </h1>    
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolorem dolor et porro, vitae nihil cum officia provident labore, ut soluta libero quaerat, repudiandae itaque beatae veniam excepturi ratione quos!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas provident deleniti fuga soluta est accusantium non similique labore fugiat, esse nihil earum aliquam sed, explicabo facere assumenda debitis distinctio? Magnam?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sequi ad enim quod voluptates voluptatum? Commodi vero nostrum voluptate fuga laudantium reiciendis unde quasi, sed sit, veniam cum quam quae?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolorem dolor et porro, vitae nihil cum officia provident labore, ut soluta libero quaerat, repudiandae itaque beatae veniam excepturi ratione quos!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas provident deleniti fuga soluta est accusantium non similique labore fugiat, esse nihil earum aliquam sed, explicabo facere assumenda debitis distinctio? Magnam?</p>
+    <button id="aparecer">Ocultar/Aparecer</button>
+<script>
+    $(document).ready(function(){
+        $("#aparecer").on("click",function(){
+            $("p:even,h1").toggle();
+        })
+    })
+</script>
+</body>
+</html>

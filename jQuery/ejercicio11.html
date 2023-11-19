@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <table>
+        <tr><th colspan="2">Nº de párrafos</th></tr>
+        <tr><td>Párrafos</td><td id="numero"></td></tr>
+    </table>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sequi ad enim quod voluptates voluptatum? Commodi vero nostrum voluptate fuga laudantium reiciendis unde quasi, sed sit, veniam cum quam quae?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolorem dolor et porro, vitae nihil cum officia provident labore, ut soluta libero quaerat, repudiandae itaque beatae veniam excepturi ratione quos!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas provident deleniti fuga soluta est accusantium non similique labore fugiat, esse nihil earum aliquam sed, explicabo facere assumenda debitis distinctio? Magnam?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sequi ad enim quod voluptates voluptatum? Commodi vero nostrum voluptate fuga laudantium reiciendis unde quasi, sed sit, veniam cum quam quae?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolorem dolor et porro, vitae nihil cum officia provident labore, ut soluta libero quaerat, repudiandae itaque beatae veniam excepturi ratione quos!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas provident deleniti fuga soluta est accusantium non similique labore fugiat, esse nihil earum aliquam sed, explicabo facere assumenda debitis distinctio? Magnam?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sequi ad enim quod voluptates voluptatum? Commodi vero nostrum voluptate fuga laudantium reiciendis unde quasi, sed sit, veniam cum quam quae?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolorem dolor et porro, vitae nihil cum officia provident labore, ut soluta libero quaerat, repudiandae itaque beatae veniam excepturi ratione quos!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas provident deleniti fuga soluta est accusantium non similique labore fugiat, esse nihil earum aliquam sed, explicabo facere assumenda debitis distinctio? Magnam?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sequi ad enim quod voluptates voluptatum? Commodi vero nostrum voluptate fuga laudantium reiciendis unde quasi, sed sit, veniam cum quam quae?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolorem dolor et porro, vitae nihil cum officia provident labore, ut soluta libero quaerat, repudiandae itaque beatae veniam excepturi ratione quos!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas provident deleniti fuga soluta est accusantium non similique labore fugiat, esse nihil earum aliquam sed, explicabo facere assumenda debitis distinctio? Magnam?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sequi ad enim quod voluptates voluptatum? Commodi vero nostrum voluptate fuga laudantium reiciendis unde quasi, sed sit, veniam cum quam quae?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolorem dolor et porro, vitae nihil cum officia provident labore, ut soluta libero quaerat, repudiandae itaque beatae veniam excepturi ratione quos!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas provident deleniti fuga soluta est accusantium non similique labore fugiat, esse nihil earum aliquam sed, explicabo facere assumenda debitis distinctio? Magnam?</p>
+    <button id="vaciar">Vaciar Impares</button>
+<script>
+    $(document).ready(function(){
+        $("#numero").text($("p").length)
+        $("#vaciar").on("click",function(){
+            $("p:odd").empty();
+        })
+    })
+</script>
+</body>
+</html>
