@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Buscar peícula</h1>
+    <input type="text" id="titulo_peli">
+    <button id="buscar">Buscar</button>
+    <div id="resultado"></div>
+    <p id="error"></p>
+    <script>
+        $(document).ready(function(){
+
+            $('#buscar').click(function(){
+                let titulo = $('#titulo_peli').val();
+                let apiKey= '1b5863eb';
+
+                $.ajax({
+
+                    url: "http://www.omdbapi.com/?apikey="+apiKey+"&t="+titulo,
+                    success: function (data){
+                        if(data.Title!=undefined){
+                            $('#resultado').html("<img src='"+data.Poster+"'><p>Título: <b>"+
+                        data.Title+"</b></p><p>Year: <b>"+
+                        data.Year+"</b></p><p>Duración: <b>"+
+                        data.Runtime+"</b></p></p><p>Género: <b>"+
+                        data.Genre+"</b></p></p><p>Director: <b>"+
+                        data.Director+"</b></p>");
+                        }
+                        else{
+                                $("#error").text("Vaya, parece que no hemos encontrado esa película...");
+                                $("#resultado").empty();
+                        }
+                    },
+                    error: function(){
+                        $("#error").text("Vaya, parece que hubo un error inesperado...")
+                    }
+                }).fail(function(){
+                    $("#error").text("Vaya, parece que hubo un error de conexión...")
+                })
+            }
+        )})
+
+    </script>
+</body>
+</html>

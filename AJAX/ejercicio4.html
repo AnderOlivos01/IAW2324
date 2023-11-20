@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio4</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Información usuarios de GitHub</h1>
+    <p>Escribe el nombre de un usuario</p>
+    <input type="text" id="usuario">
+    <button id="buscar">Buscar</button>
+    <div id="resultado"></div>
+    <p id="error"></p>
+    <script>
+        $(document).ready(function(){
+
+            $('#buscar').click(function(){
+                let name = $('#usuario').val();
+
+                $.ajax({
+                    url: "https://api.github.com/users/"+name,
+                    success: function (data){
+                    $('#resultado').html("<p><b>Nombre: </b>"+
+                        data.login+"</p><p><b>ID: </b>"+
+                        data.id+"</p><p><b>Repositorios públicos: </b>"+
+                        data.public_repos+"</p><p><b>Seguidores: </b>"+
+                        data.followers+"</p><p><b>Siguiendo: </b>"+
+                        data.following+"</p>");
+                    }
+                }).fail(function(){
+                    $("#error").text("Parece que no existe este usuario...")
+                })
+            }
+        )})
+
+    </script>
+</body>
+</html>

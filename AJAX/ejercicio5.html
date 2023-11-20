@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio5</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Buscador De Libros</h1>
+    <input type="text" id="libro">
+    <button id="buscar">Buscar libro</button>
+    <div id="resultado"></div>
+    <p id="error"></p>
+    <script>
+        $(document).ready(function(){
+
+            $('#buscar').click(function(){
+                let ciudad = $('#ciudad').val();
+                let apiKey= 'PiwE5D8-lWIMFjCeiALoHqQ7oRhPJiYFk-8c-OujWR4';
+
+                $.ajax({
+
+                    url: "https://api.unsplash.com/photos/random?client_id="+apiKey,
+                    success: function (data){
+                    $('#resultado').attr("src",data.urls.small);
+                    }
+                }).fail(function(){
+                    $("#error").text("Parece que hubo un error al cargar la imagen")
+                })
+            }
+        )})
+
+    </script>
+</body>
+</html>
