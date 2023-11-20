@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio5</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+.filas{
+    margin: 5px;
+    border: 3px solid rgb(0, 69, 125);
+    background-color: rgb(168, 233, 255);
+    padding: 5px;
+    width: 30%;
+}
+
+</style>
 </head>
 <body>
     <h1>Buscador De Libros</h1>
@@ -14,16 +24,29 @@
     <p id="error"></p>
     <script>
         $(document).ready(function(){
-
             $('#buscar').click(function(){
-                let ciudad = $('#ciudad').val();
-                let apiKey= 'PiwE5D8-lWIMFjCeiALoHqQ7oRhPJiYFk-8c-OujWR4';
+                let libro_nombre = $('#libro').val();
+                let apiKey= 'AIzaSyBaaHWZ8qFOjM3frT9EEJx-RYz5B3xcAb8';
 
                 $.ajax({
+                    url: "https://www.googleapis.com/books/v1/volumes?q=intitle:"
+                    +libro_nombre+"&key="
+                    +apiKey,
 
-                    url: "https://api.unsplash.com/photos/random?client_id="+apiKey,
                     success: function (data){
-                    $('#resultado').attr("src",data.urls.small);
+                        var todos_libros=[];
+                        for(var i=0;i<data.items.length;i++){
+                            todos_libros=todos_libros+"<div class='filas'><h3>"
+                            +data.items[i].volumeInfo.title
+                            +"</h3><p><b>Fecha de publicación:</b> "
+                            +data.items[i].volumeInfo.publishedDate
+                            +"</p><p><b>Número de páginas:</b> "
+                            +data.items[i].volumeInfo.pageCount
+                            +"</p><p><b>Descripción:</b> "
+                            +data.items[i].volumeInfo.description
+                            +"</p></div>"
+                        }
+                        $('#resultado').html(todos_libros);
                     }
                 }).fail(function(){
                     $("#error").text("Parece que hubo un error al cargar la imagen")
