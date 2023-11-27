@@ -13,9 +13,14 @@
 </head>
 <body>
     <div class="center" id="container">
-        <h1>tic tac toe</h1>
+        <h1 id="game_name">tic tac toe</h1>
         <h3 id="player_turn"></h3>
         <div id="game">
+        </div>
+        <div id="end_game" class="center">
+            <p>winner</p>
+            <h1 id="winner"></h1>
+            <button id="button_start_again" onclick="restart()">PLAY AGAIN</button>
         </div>
     </div>
 <script src="game.js"></script>

@@ -1,4 +1,8 @@
+/*Create the array with the forms*/
+
 var form=[];
+
+/*Create the players with default values*/
 
 var player1={
   figure: "X",
@@ -9,38 +13,51 @@ var player2={
   turn: false
 };
 
+/*Start the game*/
+
 create_board();
 check_turn();
 
 
-function create_board(){
+function create_board(){ /*This function creates the board*/
   for(var i=0;i<9;i++){
     $('#game').append("<div class='box center' id='box_position"+i+
-    "' onclick='fill_box(box_position"+i+",player1.turn,"+i+")'></div>");
+    "' onclick='fill_box(box_position"+i+",player1,"+i+")'></div>");
   }
 }
 
-function fill_box(a,b,c){
-  if(b==true){
-    console.log(c);
+function fill_box(a,b,c){ /*This function fills the divs and call the check_win functions*/
+
+  $(a).removeAttr('onclick');
+
+  if(b.turn==true){
+
+    /*Add the X to the board */
     $(a).html("X");
     $(a).addClass("player1_class");
-    check_win_w(c);
-    change_turn();
-    form[c]=player1.figure;
-    console.log(form);
+
+    /*Add the figure X to the "form" array*/
+    form[c]=b.figure;
+
+
+    /*Check if X win horizontal*/
+    check_win_h(c,b.figure);
   }
   else{
-    console.log(c);
+    
+    /*Add the X to the board */
     $(a).html("O");
     $(a).addClass("player2_class");
-    change_turn();
+
+    /*Add the figure O to the "form" array*/
     form[c]=player2.figure;
-    console.log(form);
+
+    /*Check if O win horizontal*/
+    check_win_h(c,player2.figure);
   }
 }
 
-function check_turn(){
+function check_turn(){ /*This function checks who has the turn*/
   if(player1.turn==true){
     $('#player_turn').html("X turn");
   }
@@ -49,7 +66,7 @@ function check_turn(){
   }
 }
 
-function change_turn(){
+function change_turn(){ /*This function change the turn when we checked the possible wins*/
   if(player1.turn==true){
     player1.turn=false;
     player2.turn=true;
@@ -62,23 +79,97 @@ function change_turn(){
   }
 }
 
-function check_win_w(c){
-  switch (c){
-    case c=0 || c=1 || c=2:
-      console.log("estás en la fila 1");
-      break;
-    case c>3 && c<5:
-      console.log("estás en la fila 2");
-      break;
-    case c>6 && c<8:
-      console.log("estás en la fila 3");
-      break;
+function check_win_h(c,figure){ /*This function checks the possible horizontal wins*/
+  if(c<3){ //ROW 1
+    if(form[0]==figure && form[1]==figure && form[2]==figure){
+      show_end(figure);
+    }
+    else {check_win_v(c,figure);}
+  }
+  else{
+    if(c>=3 && c<=5){ //ROW 2
+      if(form[3]==figure && form[4]==figure && form[5]==figure){
+        show_end(figure);
+      }
+      else {check_win_v(c,figure);}
+    }
+    else{
+      if(c>5){ //ROW 3
+        if(form[6]==figure && form[7]==figure && form[8]==figure){
+          show_end(figure);
+        }
+        else {check_win_v(c,figure);}
+      }
+    }
   }
 }
-function check_win_h(a){
 
+function check_win_v(c,figure){ /*This function checks the possible vertical wins*/
+  if(c==0 || c==3 || c==6){ //COLUMN 1
+    if(form[0]==figure && form[3]==figure && form[6]==figure){
+      show_end(figure);
+    }
+    else {check_win_d(c,figure);}
+  }
+  else{
+    if(c==1 || c==4 || c==7){ //COLUMN 2
+      if(form[1]==figure && form[4]==figure && form[7]==figure){
+        show_end(figure);
+      }
+      else {check_win_d(c,figure);}
+    }
+    else{
+      if(c==2 || c==5 || c==8){ //COLUMN 3
+        if(form[2]==figure && form[5]==figure && form[8]==figure){
+          show_end(figure);
+        }
+        else {check_win_d(c,figure);}
+      }
+    }
+  }
 }
 
-function check_win_d(a){
+function check_win_d(c,figure){ /*This function checks the possible diagonal wins*/
+  if(c==0 || c==4 || c==8){ //DIAGONAL 1
+    if(form[0]==figure && form[4]==figure && form[8]==figure){
+      show_end(figure);
+    }
+    else {change_turn();}
+  }
+  else{
+    if(c==2 || c==4 || c==6){ //DIAGONAL 2
+      if(form[2]==figure && form[4]==figure && form[6]==figure){
+        show_end(figure);
+      }
+      else {change_turn();}
+    }
+    else{change_turn();}
+  }
+}
 
+function show_end(a){ /*This function shows the winner and the end div*/
+  $('#game').empty()
+  $('#game,#player_turn').css({"display":"none"});
+  $('#end_game').css({"display":"flex"});
+  $('#winner').text(a);
+}
+
+function restart(){
+form=[];
+
+player1={
+  figure: "X",
+  turn: true
+};
+player2={
+  figure: "O",
+  turn: false
+};
+
+$('#game').css({"display":"grid"});
+$('#player_turn').css({"display":"block"});
+$('#end_game').css({"display":"none"});
+
+create_board();
+check_turn();
 }
