@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #2b2a33;
+    font-family: 'Nova Square', sans-serif;
+}
+
+#container{
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    color: white;
+    font-size: 60px;
+    margin: 5px;
+}
+
+#player_turn{
+    color: whitesmoke;
+    font-size: larger;
+    margin: 10px;
+}
+
+#game{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;        
+}
+
+.box{
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.player1_class{
+    background-color: rgb(92, 184, 215);
+}
+
+.player2_class{
+    background-color: lightcoral;
+}
