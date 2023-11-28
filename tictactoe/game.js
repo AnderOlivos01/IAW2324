@@ -30,6 +30,9 @@ function fill_box(a,b,c){ /*This function fills the divs and call the check_win 
 
   $(a).removeAttr('onclick');
 
+  /*Check a draw*/
+  check_draw(b.figure);
+
   if(b.turn==true){
 
     /*Add the X to the board */
@@ -38,7 +41,6 @@ function fill_box(a,b,c){ /*This function fills the divs and call the check_win 
 
     /*Add the figure X to the "form" array*/
     form[c]=b.figure;
-
 
     /*Check if X win horizontal*/
     check_win_h(c,b.figure);
@@ -151,7 +153,7 @@ function show_end(a){ /*This function shows the winner and the end div*/
   $('#game').empty()
   $('#game,#player_turn').css({"display":"none"});
   $('#end_game').css({"display":"flex"});
-  $('#winner').text(a);
+  $('#child_winner').text(a);
 }
 
 function restart(){
@@ -172,4 +174,12 @@ $('#end_game').css({"display":"none"});
 
 create_board();
 check_turn();
+}
+
+function check_draw(figure){
+  if(form.length==9){
+    show_end(figure);
+    $('#winner').css({"display":"none"});
+    $('#child_winner').text("DRAW");
+  }
 }
