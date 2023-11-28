@@ -151,35 +151,36 @@ function check_win_d(c,figure){ /*This function checks the possible diagonal win
 
 function show_end(a){ /*This function shows the winner and the end div*/
   $('#game').empty()
-  $('#game,#player_turn').css({"display":"none"});
+  $('#game').css({"display":"none"});
+  $('#player_turn').css({"display":"none"});
   $('#end_game').css({"display":"flex"});
-  $('#child_winner').text(a);
+  $('#winner').css({"display":"block"});
+  $('#child_winner').css({"display":"block"}).text(a);
 }
 
 function restart(){
-form=[];
+  form=[];
+  player1.turn= true;
+  player2.turn=false;
 
-player1={
-  figure: "X",
-  turn: true
-};
-player2={
-  figure: "O",
-  turn: false
-};
+  $('#game').css({"display":"grid"});
+  $('#player_turn').css({"display":"block"});
+  $('#winner').css({"display":"none"});
+  $('#child_winner').css({"display":"none"});
+  $('#end_game').css({"display":"none"});
 
-$('#game').css({"display":"grid"});
-$('#player_turn').css({"display":"block"});
-$('#end_game').css({"display":"none"});
-
-create_board();
-check_turn();
+  create_board();
+  check_turn();
 }
 
 function check_draw(figure){
-  if(form.length==9){
-    show_end(figure);
-    $('#winner').css({"display":"none"});
-    $('#child_winner').text("DRAW");
+    var filled = form.filter(function(elemento) {
+      return elemento.trim() !== "";
+    });
+  
+    if (filled.length === 9) {
+      show_end(figure);
+      $('#winner').css({"display":"none"});
+      $('#child_winner').text("DRAW");
+    }
   }
-}

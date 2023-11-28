@@ -60,7 +60,7 @@ body{
     display: none;
 }
 
-#end_game>p{
+#winner{
     color: whitesmoke;
     font-size: larger;
 }
