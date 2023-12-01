@@ -79,6 +79,19 @@ body{
     cursor: pointer;
 }
 
+.button-class-restart{
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.button-class-restart>img{
+    width: 50px;
+    margin-bottom: 5px;
+}
+
 #child-winner{
     margin: 10px 0 10px 0;
     font-size: 80px;
