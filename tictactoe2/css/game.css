@@ -87,10 +87,6 @@ body{
     overflow: hidden;
 }
 
-.button-class-restart>img{
-    width: 50px;
-    margin-bottom: 5px;
-}
 
 #child-winner{
     margin: 10px 0 10px 0;
