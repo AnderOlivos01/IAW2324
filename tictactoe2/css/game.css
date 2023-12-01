@@ -80,13 +80,15 @@ body{
 }
 
 .button-class-restart{
+    -webkit-border-radius: 50%;
     border-radius: 50%;
     width: 80px;
     height: 80px;
-    box-sizing: border-box;
-    overflow: hidden;
 }
-
+.bi-arrow-clockwise{
+    width: 80%;
+    height: 80%;
+}
 
 #child-winner{
     margin: 10px 0 10px 0;
