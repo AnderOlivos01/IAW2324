@@ -1,7 +1,7 @@
 /*Create the array with the forms*/
 
 var form=[];
-
+let maximo = 9;
 /*Create the players with default values*/
 
 var player1={
@@ -13,11 +13,11 @@ var player2={
   turn: false
 };
 
+
 /*Start the game*/
 
 create_board();
 check_turn();
-
 
 function create_board(){ /*This function creates the board*/
   for(var i=0;i<9;i++){
@@ -27,11 +27,10 @@ function create_board(){ /*This function creates the board*/
 }
 
 function fill_box(a,b,c){ /*This function fills the divs and call the check_win functions*/
-
+  maximo--;
   $(a).removeAttr('onclick');
 
-  /*Check a draw*/
-  check_draw(b.figure);
+  check_draw();
 
   if(b.turn==true){
 
@@ -143,9 +142,12 @@ function check_win_d(c,figure){ /*This function checks the possible diagonal win
       if(form[2]==figure && form[4]==figure && form[6]==figure){
         show_end(figure);
       }
-      else {change_turn();}
+      else {change_turn();
+      }
     }
-    else{change_turn();}
+    else{
+      change_turn();
+    }
   }
 }
 
@@ -160,7 +162,7 @@ function show_end(a){ /*This function shows the winner and the end div*/
 
 function restart(){
   form=[];
-  player1.turn= true;
+  player1.turn=true;
   player2.turn=false;
 
   $('#game').css({"display":"grid"});
@@ -168,18 +170,15 @@ function restart(){
   $('#winner').css({"display":"none"});
   $('#child_winner').css({"display":"none"});
   $('#end_game').css({"display":"none"});
+  maximo = 9;
 
   create_board();
   check_turn();
 }
 
-function check_draw(figure){
-    var filled = form.filter(function(elemento) {
-      return elemento.trim() !== "";
-    });
-  
-    if (filled.length === 9) {
-      show_end(figure);
+function check_draw(){
+    if (maximo == 0) {
+      show_end(null);
       $('#winner').css({"display":"none"});
       $('#child_winner').text("DRAW");
     }
