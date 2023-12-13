@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        h3{
+            color: rgb(43, 43, 100);
+        }
+    </style>
+</head>
+<body>
+    <h1>Air Pollution</h1>
+    <p>Introduce la latitud:</p>
+    <input type="text" id="lat">
+    <p>Introduce la longitud:</p>
+    <input type="text" id="lon">
+    <br><br>
+    <button id="boton-enviar">Enviar</button>
+    <div id="resultado"></div>
+<script>
+
+$(document).ready(function(){
+
+    $("#boton-enviar").click(function(){
+    var lat = $("#lat").val();
+    var lon = $("#lon").val();
+    if(lat=="" || lon==''){
+        $("#resultado").html("Por favor, rellene los dos campos.");
+    }
+    else{
+        let apiKey= "f8a124b4ba54c4b8a3d72f8f194c3311";
+        $.ajax({
+            url: 'http://api.openweathermap.org/data/2.5/air_pollution?lat='+lat+'&lon='+lon+'&appid='+apiKey,
+            success: function(data){
+                var calidad=data.list[0].main.aqi;
+                var monoxidocarbono=data.list[0].components.co;
+                switch (calidad){
+                    case 1:
+                        $("#resultado").html("<p><b>Calidad del aire:</b> Bueno</p>");
+                        break;
+                    case 2:
+                        $("#resultado").html("<p><b>Calidad del aire:</b> Aceptable</p>");
+                        break;
+                    case 3:
+                        $("#resultado").html("<p><b>Calidad del aire:</b> Moderado</p>");
+                        break;
+                    case 4:
+                        $("#resultado").html("<p><b>Calidad del aire:</b> Malo</p>");
+                        break;
+                    case 5:
+                        $("#resultado").html("<p><b>Calidad del aire:</b> Muy malo</p>");
+                        break;
+                    default:
+                        $("#resultado").html("<p><b>Error</b></p>");
+                }
+                $("#resultado").append("<p><b>Cantidad monóxido de carbono (CO): </b>"+monoxidocarbono+" μg/m3</p>");
+            },
+            error: function(){
+                $("#resultado").html("Hubo un error en los datos.");
+            }
+        }).fail(function(){
+            $("#resultado").html("Error de ajax.");
+        });
+    }
+    })
+});
+
+</script>
+</body>
+</html>
